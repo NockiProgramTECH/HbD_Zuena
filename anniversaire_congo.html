@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="linguala">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mbotama Malamu — Joyeux Anniversaire</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --rose-vif: #E8185A;
+    --rose-doux: #F4789A;
+    --rose-pale: #FFD6E3;
+    --rouge: #C0162E;
+    --rouge-fonce: #8B0A20;
+    --or: #D4952A;
+    --or-clair: #F5C842;
+    --creme: #FFF8F0;
+    --brun: #3D1A10;
+    --blanc: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--creme);
+    color: var(--brun);
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--rouge-fonce) 0%, var(--rose-vif) 55%, var(--or) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1rem;
+  }
+
+  .hero-svg-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.18;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--blanc);
+  }
+
+  .hero-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--or-clair);
+    margin-bottom: 1rem;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 10vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--blanc);
+    margin-bottom: 0.4rem;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  }
+
+  .hero-lingala {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--or-clair);
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-divider-line {
+    width: 60px;
+    height: 1.5px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  .hero-date {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ===== SECTION MESSAGE ===== */
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-vif);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--brun);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #5A2D20;
+  }
+
+  /* ===== CARTE VOEUX ===== */
+  .carte {
+    background: var(--blanc);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 40px rgba(192,22,46,0.10);
+    position: relative;
+    overflow: hidden;
+    margin: 3rem 0;
+  }
+
+  .carte-svg-corner {
+    position: absolute;
+    top: 0; right: 0;
+    width: 140px;
+    height: 140px;
+    pointer-events: none;
+  }
+
+  .carte-svg-corner-bottom {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    transform: rotate(180deg);
+  }
+
+  .carte blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    line-height: 1.5;
+    color: var(--rouge-fonce);
+    position: relative;
+    z-index: 1;
+  }
+
+  .carte-lingala {
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--rose-vif);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    z-index: 1;
+    position: relative;
+  }
+
+  /* ===== BOUGIE SECTION ===== */
+  .bougies-section {
+    background: var(--rouge-fonce);
+    padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bougies-section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bougies-section .section-eyebrow {
+    color: var(--or-clair);
+  }
+
+  .bougies-section .section-title {
+    color: var(--blanc);
+  }
+
+  .bougies-section .section-body {
+    color: rgba(255,255,255,0.75);
+  }
+
+  .bougies-svg {
+    width: 100%;
+    max-width: 420px;
+    margin: 2rem auto 0;
+    display: block;
+  }
+
+  /* ===== PROVERBE ===== */
+  .proverbe-section {
+    padding: 5rem 1.5rem;
+    background: var(--rose-pale);
+    text-align: center;
+  }
+
+  .proverbe-card {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--blanc);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 24px rgba(232,24,90,0.10);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proverbe-card .guillemet {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    line-height: 0.6;
+    color: var(--rose-pale);
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .proverbe-card p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--brun);
+  }
+
+  .proverbe-card .source {
+    margin-top: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-vif);
+  }
+
+  /* ===== GALERIE MOTIFS ===== */
+  .motifs-section {
+    padding: 4rem 1.5rem;
+    background: var(--creme);
+  }
+
+  .motifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.2rem;
+    max-width: 720px;
+    margin: 2rem auto 0;
+  }
+
+  .motif-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(192,22,46,0.08);
+  }
+
+  .motif-card svg {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.75rem;
+  }
+
+  .motif-card .motif-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--rouge);
+    letter-spacing: 0.06em;
+  }
+
+  .motif-card .motif-lingala {
+    font-size: 0.72rem;
+    color: var(--rose-vif);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--brun);
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--or-clair);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  /* ===== FLAMME ANIMATION ===== */
+  @keyframes flamme {
+    0%, 100% { transform: scaleX(1) scaleY(1) rotate(-2deg); }
+    33% { transform: scaleX(0.85) scaleY(1.08) rotate(3deg); }
+    66% { transform: scaleX(1.05) scaleY(0.95) rotate(-1deg); }
+  }
+  .flamme-anim { animation: flamme 1.5s ease-in-out infinite; transform-origin: bottom center; }
+  .flamme-anim-2 { animation: flamme 1.8s ease-in-out infinite 0.3s; transform-origin: bottom center; }
+  .flamme-anim-3 { animation: flamme 1.3s ease-in-out infinite 0.6s; transform-origin: bottom center; }
+  .flamme-anim-4 { animation: flamme 2s ease-in-out infinite 0.1s; transform-origin: bottom center; }
+  .flamme-anim-5 { animation: flamme 1.6s ease-in-out infinite 0.5s; transform-origin: bottom center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flamme-anim, .flamme-anim-2, .flamme-anim-3, .flamme-anim-4, .flamme-anim-5,
+    .hero-scroll { animation: none; }
+  }
+
+  @media (max-width: 480px) {
+    .motifs-grid { grid-template-columns: repeat(2, 1fr); }
+    .carte { padding: 2rem 1.2rem; }
+    .proverbe-card { padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-label="En-tête anniversaire">
+
+  <!-- SVG fond décoratif — motifs kongo circulaires -->
+  <svg class="hero-svg-bg" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Grands cercles concentriques stylisés -->
+    <circle cx="400" cy="450" r="380" fill="none" stroke="white" stroke-width="1.2" stroke-dasharray="12 8"/>
+    <circle cx="400" cy="450" r="300" fill="none" stroke="white" stroke-width="0.8"/>
+    <circle cx="400" cy="450" r="210" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 10"/>
+
+    <!-- Rosace centrale -->
+    <g transform="translate(400,450)">
+      <line x1="0" y1="-200" x2="0" y2="200" stroke="white" stroke-width="0.8"/>
+      <line x1="-200" y1="0" x2="200" y2="0" stroke="white" stroke-width="0.8"/>
+      <line x1="-141" y1="-141" x2="141" y2="141" stroke="white" stroke-width="0.6"/>
+      <line x1="141" y1="-141" x2="-141" y2="141" stroke="white" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="10" fill="white"/>
+    </g>
+
+    <!-- Pétales répétitifs — motif kuba/kongo -->
+    <g transform="translate(400,450)" opacity="0.7">
+      <ellipse cx="0" cy="-110" rx="22" ry="40" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="0" cy="110" rx="22" ry="40" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="-110" cy="0" rx="40" ry="22" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="110" cy="0" rx="40" ry="22" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="-78" cy="-78" rx="22" ry="40" transform="rotate(-45,-78,-78)" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="78" cy="-78" rx="22" ry="40" transform="rotate(45,78,-78)" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="78" cy="78" rx="22" ry="40" transform="rotate(-45,78,78)" fill="none" stroke="white" stroke-width="1.2"/>
+      <ellipse cx="-78" cy="78" rx="22" ry="40" transform="rotate(45,-78,78)" fill="none" stroke="white" stroke-width="1.2"/>
+    </g>
+
+    <!-- Coins décoratifs -->
+    <g opacity="0.5">
+      <circle cx="80" cy="80" r="60" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="6 6"/>
+      <circle cx="80" cy="80" r="35" fill="none" stroke="white" stroke-width="0.6"/>
+      <circle cx="720" cy="80" r="60" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="6 6"/>
+      <circle cx="720" cy="80" r="35" fill="none" stroke="white" stroke-width="0.6"/>
+      <circle cx="80" cy="820" r="60" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="6 6"/>
+      <circle cx="720" cy="820" r="60" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="6 6"/>
+    </g>
+
+    <!-- Losanges latéraux -->
+    <polygon points="30,400 70,450 30,500 -10,450" fill="none" stroke="white" stroke-width="1"/>
+    <polygon points="770,400 810,450 770,500 730,450" fill="none" stroke="white" stroke-width="1"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-label">Journée Spéciale &bull; Congo</p>
+    <h1 class="hero-name">Mbotama<br>Malamu</h1>
+    <p class="hero-lingala">Joyeux Anniversaire</p>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <!-- Fleur SVG décorative -->
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="11" cy="11" r="3.5" fill="#F5C842"/>
+        <ellipse cx="11" cy="4" rx="2.5" ry="4" fill="#F5C842" opacity="0.7"/>
+        <ellipse cx="11" cy="18" rx="2.5" ry="4" fill="#F5C842" opacity="0.7"/>
+        <ellipse cx="4" cy="11" rx="4" ry="2.5" fill="#F5C842" opacity="0.7"/>
+        <ellipse cx="18" cy="11" rx="4" ry="2.5" fill="#F5C842" opacity="0.7"/>
+        <ellipse cx="6.5" cy="6.5" rx="2.5" ry="3.5" fill="#F5C842" opacity="0.5" transform="rotate(-45 6.5 6.5)"/>
+        <ellipse cx="15.5" cy="6.5" rx="2.5" ry="3.5" fill="#F5C842" opacity="0.5" transform="rotate(45 15.5 6.5)"/>
+        <ellipse cx="6.5" cy="15.5" rx="2.5" ry="3.5" fill="#F5C842" opacity="0.5" transform="rotate(45 6.5 15.5)"/>
+        <ellipse cx="15.5" cy="15.5" rx="2.5" ry="3.5" fill="#F5C842" opacity="0.5" transform="rotate(-45 15.5 15.5)"/>
+      </svg>
+      <div class="hero-divider-line"></div>
+    </div>
+    <p class="hero-date">Lelo ezali mokolo na yo moko &bull; Aujourd'hui c'est ton jour</p>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span style="font-size:0.68rem;letter-spacing:0.15em;">KITA WUTA</span>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 2v14M3 12l5 6 5-6" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== SECTION MESSAGE ===== -->
+<section class="section" aria-label="Message d'anniversaire">
+  <div class="section-inner">
+    <p class="section-eyebrow">Makanisi ya motema — Du fond du coeur</p>
+    <h2 class="section-title">Mbote, Moninga na Ngai</h2>
+    <p class="section-body">
+      Lelo, mokolo ya mbotama na yo, mobali to mwasi oyo abotamaki na kati ya lopango ya Congo-Brazzaville, biso nyonso tofandi awa, na motema moko, mpo na kosepela na yo.
+    </p>
+
+    <div class="carte">
+      <!-- Motif coin haut-droit -->
+      <svg class="carte-svg-corner" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="140" cy="0" r="120" fill="none" stroke="#F4789A" stroke-width="1" stroke-dasharray="6 6"/>
+        <circle cx="140" cy="0" r="80" fill="none" stroke="#E8185A" stroke-width="0.8"/>
+        <circle cx="140" cy="0" r="45" fill="#FFD6E3" opacity="0.3"/>
+        <path d="M140,0 L60,80" stroke="#D4952A" stroke-width="0.7" stroke-dasharray="4 8"/>
+        <path d="M140,0 L80,60" stroke="#D4952A" stroke-width="0.7" stroke-dasharray="4 8"/>
+        <circle cx="108" cy="32" r="5" fill="#E8185A" opacity="0.5"/>
+        <circle cx="90" cy="50" r="3" fill="#D4952A" opacity="0.7"/>
+      </svg>
+      <!-- Motif coin bas-gauche -->
+      <svg class="carte-svg-corner-bottom" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="120" cy="0" r="100" fill="none" stroke="#F4789A" stroke-width="1" stroke-dasharray="6 6"/>
+        <circle cx="120" cy="0" r="60" fill="none" stroke="#E8185A" stroke-width="0.8"/>
+        <circle cx="120" cy="0" r="30" fill="#FFD6E3" opacity="0.3"/>
+        <circle cx="88" cy="32" r="5" fill="#E8185A" opacity="0.4"/>
+      </svg>
+
+      <blockquote>
+        "Mabele na yo etindi yo mpo na kobika, na kosepela, na kolingana. Tika mokolo oyo ezala ya esengo kitoko mpo na yo."
+      </blockquote>
+      <div class="carte-lingala">
+        <strong>En lingala :</strong> Que cette terre t'ait porté pour vivre, pour te réjouir, pour aimer. Que ce jour soit une belle fête pour toi.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOUGIES ===== -->
+<section class="bougies-section" aria-label="Bougies d'anniversaire">
+  <div class="bougies-section-inner">
+    <p class="section-eyebrow">Fiamme ya Bonzanza — Flammes de bonheur</p>
+    <h2 class="section-title">Fula bougies!</h2>
+    <p class="section-body">
+      Na Lingala, tosepelaka na yo na motema mobimba. Lobela makasi, fula bougies, mpe mbula na yo nyonso ezala ya esengo.
+    </p>
+
+    <!-- Gâteau et bougies animées en SVG -->
+    <svg class="bougies-svg" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gâteau d'anniversaire avec cinq bougies allumées">
+      <title>Gâteau d'anniversaire avec bougies</title>
+
+      <!-- Assiette / plateau -->
+      <ellipse cx="210" cy="260" rx="170" ry="18" fill="#5A2D20" opacity="0.15"/>
+
+      <!-- Corps du gâteau — étage bas -->
+      <rect x="50" y="200" width="320" height="58" rx="12" fill="#C0162E"/>
+      <rect x="50" y="200" width="320" height="16" rx="0" fill="#E8185A"/>
+      <rect x="50" y="200" width="320" height="7" rx="0" fill="#F4789A"/>
+
+      <!-- Déco gâteau bas : pointillés et losanges -->
+      <g>
+        <circle cx="90" cy="230" r="5" fill="#F5C842" opacity="0.9"/>
+        <circle cx="130" cy="218" r="4" fill="#FFD6E3" opacity="0.8"/>
+        <circle cx="170" cy="234" r="5" fill="#F5C842" opacity="0.9"/>
+        <circle cx="210" cy="220" r="4" fill="#FFD6E3" opacity="0.8"/>
+        <circle cx="250" cy="234" r="5" fill="#F5C842" opacity="0.9"/>
+        <circle cx="290" cy="218" r="4" fill="#FFD6E3" opacity="0.8"/>
+        <circle cx="330" cy="230" r="5" fill="#F5C842" opacity="0.9"/>
+        <!-- Petits losanges -->
+        <polygon points="110,245 117,252 110,259 103,252" fill="#F5C842" opacity="0.6"/>
+        <polygon points="190,245 197,252 190,259 183,252" fill="#F5C842" opacity="0.6"/>
+        <polygon points="270,245 277,252 270,259 263,252" fill="#F5C842" opacity="0.6"/>
+      </g>
+
+      <!-- Corps du gâteau — étage haut -->
+      <rect x="90" y="140" width="240" height="65" rx="10" fill="#8B0A20"/>
+      <rect x="90" y="140" width="240" height="14" rx="0" fill="#C0162E"/>
+      <rect x="90" y="140" width="240" height="6" rx="0" fill="#F4789A"/>
+
+      <!-- Déco gâteau haut -->
+      <g>
+        <circle cx="125" cy="165" r="5" fill="#D4952A" opacity="0.9"/>
+        <circle cx="165" cy="175" r="4" fill="#F5C842" opacity="0.8"/>
+        <circle cx="210" cy="163" r="5" fill="#D4952A" opacity="0.9"/>
+        <circle cx="255" cy="175" r="4" fill="#F5C842" opacity="0.8"/>
+        <circle cx="295" cy="163" r="5" fill="#D4952A" opacity="0.9"/>
+        <!-- Coeur SVG sur le gâteau -->
+        <path d="M210,185 C210,185 195,173 195,166 C195,161 200,158 205,162 C207,163 209,166 210,168 C211,166 213,163 215,162 C220,158 225,161 225,166 C225,173 210,185 210,185Z" fill="#F4789A" opacity="0.8"/>
+      </g>
+
+      <!-- BOUGIES x5 -->
+      <!-- Bougie 1 -->
+      <rect x="114" y="110" width="12" height="32" rx="3" fill="#F5C842"/>
+      <rect x="115" y="111" width="4" height="30" rx="2" fill="#FDEEA0" opacity="0.5"/>
+      <g class="flamme-anim">
+        <ellipse cx="120" cy="104" rx="6" ry="10" fill="#FF6B00" opacity="0.9"/>
+        <ellipse cx="120" cy="106" rx="3.5" ry="6" fill="#F5C842"/>
+        <ellipse cx="120" cy="108" rx="2" ry="3" fill="white" opacity="0.7"/>
+      </g>
+
+      <!-- Bougie 2 -->
+      <rect x="154" y="106" width="12" height="36" rx="3" fill="#E8185A"/>
+      <rect x="155" y="107" width="4" height="34" rx="2" fill="#F4789A" opacity="0.4"/>
+      <g class="flamme-anim-2">
+        <ellipse cx="160" cy="100" rx="6" ry="10" fill="#FF6B00" opacity="0.9"/>
+        <ellipse cx="160" cy="102" rx="3.5" ry="6" fill="#F5C842"/>
+        <ellipse cx="160" cy="104" rx="2" ry="3" fill="white" opacity="0.7"/>
+      </g>
+
+      <!-- Bougie 3 (centre) -->
+      <rect x="204" y="103" width="12" height="39" rx="3" fill="#C0162E"/>
+      <rect x="205" y="104" width="4" height="37" rx="2" fill="#E8185A" opacity="0.4"/>
+      <g class="flamme-anim-3">
+        <ellipse cx="210" cy="97" rx="6.5" ry="11" fill="#FF6B00" opacity="0.9"/>
+        <ellipse cx="210" cy="99" rx="4" ry="7" fill="#F5C842"/>
+        <ellipse cx="210" cy="101" rx="2.2" ry="3.5" fill="white" opacity="0.7"/>
+      </g>
+
+      <!-- Bougie 4 -->
+      <rect x="254" y="106" width="12" height="36" rx="3" fill="#D4952A"/>
+      <rect x="255" y="107" width="4" height="34" rx="2" fill="#F5C842" opacity="0.4"/>
+      <g class="flamme-anim-4">
+        <ellipse cx="260" cy="100" rx="6" ry="10" fill="#FF6B00" opacity="0.9"/>
+        <ellipse cx="260" cy="102" rx="3.5" ry="6" fill="#F5C842"/>
+        <ellipse cx="260" cy="104" rx="2" ry="3" fill="white" opacity="0.7"/>
+      </g>
+
+      <!-- Bougie 5 -->
+      <rect x="294" y="110" width="12" height="32" rx="3" fill="#F4789A"/>
+      <rect x="295" y="111" width="4" height="30" rx="2" fill="#FFD6E3" opacity="0.4"/>
+      <g class="flamme-anim-5">
+        <ellipse cx="300" cy="104" rx="6" ry="10" fill="#FF6B00" opacity="0.9"/>
+        <ellipse cx="300" cy="106" rx="3.5" ry="6" fill="#F5C842"/>
+        <ellipse cx="300" cy="108" rx="2" ry="3" fill="white" opacity="0.7"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== PROVERBE ===== -->
+<section class="proverbe-section" aria-label="Proverbe congolais">
+  <div class="section-inner" style="text-align:center; margin-bottom:1.5rem;">
+    <p class="section-eyebrow">Maloba ya bankoko</p>
+    <h2 class="section-title">Proverbe du Congo</h2>
+  </div>
+  <div class="proverbe-card">
+    <!-- Grande virgule SVG décorative -->
+    <svg width="60" height="50" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-bottom:0.5rem;">
+      <path d="M8,8 C8,8 4,18 10,28 C14,35 22,36 22,28 C22,20 14,20 12,24" stroke="#F4789A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M34,8 C34,8 30,18 36,28 C40,35 48,36 48,28 C48,20 40,20 38,24" stroke="#F4789A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <p>Mbula moko ezangaka motaka te.<br>
+    <span style="color:var(--rose-vif); font-size:0.9em; font-style:normal; font-family:Inter,sans-serif;">Une seule pluie ne fait jamais sécher la boue.</span></p>
+    <p class="source">Proverbe Congolais — Lingala</p>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-name">Mbotama Malamu !</div>
+  <p style="margin-bottom:0.4rem;">Kosepela na yo na mokolo ya mbotama na yo &bull; Te souhaitant un joyeux anniversaire</p>
+  <p style="margin-top:0.8rem; font-size:0.72rem; opacity:0.4;">Fait avec amour depuis le Congo &bull; Brazzaville</p>
+</footer>
+
+</body>
+</html>
